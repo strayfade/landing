@@ -1,0 +1,34 @@
+{
+    "path": "/strayfade",
+    "meta": {
+        "title": "strayfade",
+        "description": "strayfade's profile",
+        "author": "strayfade",
+        "accentColor": "04f704",
+        "lang": "en"
+    },
+    "page": {
+        "backgroundColor": "000000",
+        "textColor": "ffffff",
+        "profile": {
+            "pfp": "/assets/avatar/strayfade.png",
+            "roundPfp": true,
+            "displayName": "noah",
+            "username": "strayfade"
+        },
+        "links": [
+            {
+                "url": "https://github.com/strayfade",
+                "icon": "github"
+            },
+            {
+                "url": "https://instagram.com/strayfade",
+                "icon": "instagram"
+            },
+            {
+                "url": "https://youtube.com/@strayfade",
+                "icon": "youtube"
+            }
+        ]
+    }
+}

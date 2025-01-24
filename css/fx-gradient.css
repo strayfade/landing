@@ -1,0 +1,14 @@
+.fx-gradient {
+    position: absolute;
+    z-index: 0;
+}
+
+@keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.75;
+    }
+}
