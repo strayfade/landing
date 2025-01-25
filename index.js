@@ -6,6 +6,10 @@ const path = require('path')
 const express = require('express')
 const app = express();
 
+// Run tests
+const port = parseInt(process.env.PORT ? process.env.PORT : 6980);
+require('./private/runTests').runTests(port)
+
 // Perform build
 require('./private/build')
 
@@ -24,7 +28,12 @@ app.get("/:id", wrapAsync(async (request, response) => {
     }
     if (foundTarget) {
         const idData = await fs.readFile(path.join(__dirname, "people", request.params.id + ".json"), { encoding: "utf-8" })
-        response.status(200).send(await generatePage(JSON.parse(idData)))
+        try {
+            response.status(200).send(await generatePage(JSON.parse(idData)))
+        }
+        catch (error) {
+            response.sendStatus(500)
+        }
     }
     else {
         //response.redirect("/strayfade")
@@ -36,7 +45,6 @@ app.get("*", wrapAsync(async (request, response) => {
 }));
 
 // Start the server
-const port = parseInt(process.env.PORT ? process.env.PORT : 6980);
 app.listen(port, wrapAsync(async () => {
     log(`Server is running on http://localhost:${port}`);
 }));

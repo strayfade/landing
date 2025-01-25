@@ -14,7 +14,7 @@
             "roundPfp": true,
             "displayName": "noah",
             "username": "strayfade <span style='opacity: 0.5;'>(0x5346)</span>",
-            "markdown": "### Markdown!\n\nWe have markdown working.",
+            "markdown": "### Hello!\n\nI'm Noah, an 19-year-old software developer and hardware engineer from the United States. I develop primarily in C++ targeting desktop and embedded platforms.\n\nI also enjoy 3D printing and working on electronics projects.",
             "tags": [
                 {
                     "title": "strayfade.com",
@@ -25,11 +25,6 @@
                     "title": "strayfa.de",
                     "color": "ffffff",
                     "url": "https://strayfa.de"
-                },
-                {
-                    "title": "sorafn.com",
-                    "color": "ffffff",
-                    "url": "https://sorafn.com"
                 }
             ]
         },
