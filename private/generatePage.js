@@ -129,7 +129,6 @@ const generatePage = async (profile) => {
         <script type="text/javascript" src="/assets/build/prod.js"></script>
     </body>
 </html>
-
     `
 }
 module.exports = { generatePage }

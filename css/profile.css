@@ -13,6 +13,7 @@
     width: min-content;
     display: flex;
     margin: 0px auto;
+    color: white;
 }
 
 .profile .pfp-container .pfp {

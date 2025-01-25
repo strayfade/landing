@@ -1,6 +1,7 @@
 const { log } = require('./private/log')
 const { wrapAsync } = require('./private/wrapAsync')
 const { generatePage } = require('./private/generatePage')
+const { landingPage } = require('./private/landingPage')
 const fs = require('fs').promises
 const path = require('path')
 const express = require('express')
@@ -41,7 +42,7 @@ app.get("/:id", wrapAsync(async (request, response) => {
     }
 }))
 app.get("*", wrapAsync(async (request, response) => {
-    response.redirect("/strayfade")
+    response.status(200).send(await landingPage())
 }));
 
 // Start the server
