@@ -7,7 +7,7 @@ const markdown = require('markdown')
 const profile = {
     meta: {
         title: "profiles",
-        description: "",
+        description: "me and the boys",
         author: "",
         accentColor: "ffffff",
     },
@@ -31,9 +31,8 @@ const landingPage = async () => {
         <meta property="og:description" content="${profile.meta.description}">
         <meta property="twitter:description" content="${profile.meta.description}">
         <meta name="author" content="${profile.meta.author}">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="theme-color" content="#${profile.meta.accentColor}">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/assets/build/prod.css" type="text/css">
     </head>
     <body style="color: #fff; background-color: #${profile.page.backgroundColor}; --accent-color: #${profile.meta.accentColor};--accent-color-transparent: #${profile.meta.accentColor}40;">
@@ -75,15 +74,15 @@ const landingPage = async () => {
                             Output += `
                             
                                 <a class="pfp-container" style="margin: 30px;" href="/${id.replace(".json", "")}">
-                                    <img class="pfp" src="${idData.page.profile.pfp}" style="border-radius: ${idData.page.profile.roundPfp ? 500 : 0}px"/>
+                                    <img class="pfp" alt="${idData.page.profile.displayName} profile picture" src="${idData.page.profile.pfp}" style="border-radius: ${idData.page.profile.roundPfp ? 500 : 0}px"/>
                                     <div style="max-content">
                                         <div style="height: max-content; width: max-content;" class="v-centered">
                                             <h1>
                                                 <p class="display-name">${idData.page.profile.displayName}</p>
                                             </h1>
-                                            <h3 class="username">
-                                                <span>${idData.page.profile.username}</span>
-                                            </h3>
+                                            <span class="username">
+                                                ${idData.page.profile.username}
+                                            </span>
                                         </div>
                                     </div>
                                 </a>

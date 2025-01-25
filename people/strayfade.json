@@ -31,18 +31,26 @@
         "socialLinks": [
             {
                 "url": "https://github.com/strayfade",
-                "icon": "github"
+                "icon": "github",
+                "text": "Github"
             },
             {
                 "url": "discordapp.com/users/455790298082181120",
-                "icon": "discord"
+                "icon": "discord",
+                "text": "Discord"
             },
             {
                 "url": "https://youtube.com/@strayfade",
-                "icon": "youtube"
+                "icon": "youtube",
+                "text": "YouTube"
             }
         ],
         "projectLinks": [
+            {
+                "title": "strayfa.de",
+                "description": "Check out my main website to see more of my projects!",
+                "url": "https://strayfa.de/"
+            },
             {
                 "title": "sf2040 Keyboard",
                 "description": "An open-source 76-key mechanical keyboard based on the RP2040 microcontroller",

@@ -20,11 +20,13 @@
         "socialLinks": [
             {
                 "url": "https://github.com/zanelul",
-                "icon": "github"
+                "icon": "github",
+                "text": "Github"
             },
             {
                 "url": "https://discordapp.com/users/799181660301033502",
-                "icon": "discord"
+                "icon": "discord",
+                "text": "Discord"
             }
         ],
         "projectLinks": []

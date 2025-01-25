@@ -17,6 +17,8 @@ require('./private/build')
 // Allow access to static assets
 app.use('/assets', express.static('assets'))
 
+require('./private/security').setup(app)
+
 // Route handler
 app.get("/:id", wrapAsync(async (request, response) => {
     const allIds = await fs.readdir(path.join(__dirname, "people"));

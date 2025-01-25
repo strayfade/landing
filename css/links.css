@@ -1,20 +1,32 @@
 .link {
     height: 30px;
-    width: 30px;
+    width: min-content;
     display: inline-block;
     margin: 0px 10px 0px 0px;
+    display: flex;
+    color: white;
+    padding: 0px 10px;
 }
+
+.link span {
+    padding: 5px 0px 0px 10px;
+    display: inline-block;
+}
+
 .links-container {
     width: max-content;
     margin: 0px auto;
+    display: flex;
 }
+
 .link-icon {
     display: block;
 }
+
 .project-link {
     display: block;
     border-radius: 10px;
-    background-color: rgba(255,255,255,.05);
+    background-color: rgba(255, 255, 255, .05);
     color: #fff;
     padding: 15px;
     margin-bottom: 10px;
@@ -23,14 +35,18 @@
     transition: 0.25s;
     transform: scale(100%);
 }
+
 .project-link:hover {
     z-index: 4;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
     transform: scale(102%);
 }
-.project-link h3, .project-link p {
+
+.project-link h3,
+.project-link p {
     margin: 0;
 }
+
 .project-link p {
     margin-top: 10px;
 }
