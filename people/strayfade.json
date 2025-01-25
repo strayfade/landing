@@ -47,11 +47,6 @@
         ],
         "projectLinks": [
             {
-                "title": "strayfa.de",
-                "description": "Check out my main website to see more of my projects!",
-                "url": "https://strayfa.de/"
-            },
-            {
                 "title": "sf2040 Keyboard",
                 "description": "An open-source 76-key mechanical keyboard based on the RP2040 microcontroller",
                 "url": "https://strayfa.de/sf2040"
