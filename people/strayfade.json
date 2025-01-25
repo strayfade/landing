@@ -10,7 +10,7 @@
     "page": {
         "backgroundColor": "000000",
         "profile": {
-            "pfp": "/assets/avatar/strayfade.png",
+            "pfp": "/assets/avatars/strayfade.png",
             "roundPfp": true,
             "displayName": "noah",
             "username": "strayfade <span style='opacity: 0.5;'>(0x5346)</span>",

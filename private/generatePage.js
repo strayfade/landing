@@ -21,16 +21,12 @@ const generatePage = async (profile) => {
         <meta name="theme-color" content="#${profile.meta.accentColor}">
 
         <link rel="stylesheet" href="/assets/build/prod.css" type="text/css">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     </head>
     <body style="color: #fff; background-color: #${profile.page.backgroundColor};">
         <div>
             ${(() => {
                 let Output = ``
-                const gradCount = 5;
+                const gradCount = 4;
                 for (let x = 0; x < gradCount; x++) {
                     for (let y = 0; y < gradCount; y++) {
                         let x2 = 1 - (1 / (gradCount - 1)) * x
@@ -41,7 +37,7 @@ const generatePage = async (profile) => {
                         dist *= 2;
                         Output += `
                             <div style="filter: brightness(${dist * 100}%); opacity: 0.25;">
-                                ${gradient(profile.meta.accentColor, Math.random() * 1600 + 400, x2, y2)}
+                                ${gradient(profile.meta.accentColor, Math.random() * 600 + 400, x2, y2)}
                             </div>
                         `
                     }
@@ -119,7 +115,7 @@ const generatePage = async (profile) => {
                                 for (const link of profile.page.socialLinks) {
                                     Output += `
                                         <a class="link" href="${link.url}">
-                                            <img class="link-icon" src="https://cdn.simpleicons.org/${link.icon}/white" />
+                                            <img class="link-icon" src="/assets/icons/${link.icon}.svg" />
                                         </a>
                                     `
                                 }

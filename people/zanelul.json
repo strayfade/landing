@@ -1,0 +1,32 @@
+{
+    "path": "/zanelul",
+    "meta": {
+        "title": "zanelul",
+        "description": "zanelul's profile",
+        "author": "zanelul",
+        "accentColor": "5102fc",
+        "lang": "en"
+    },
+    "page": {
+        "backgroundColor": "000000",
+        "profile": {
+            "pfp": "/assets/avatars/zanelul.png",
+            "roundPfp": true,
+            "displayName": "zane",
+            "username": "zanelul",
+            "markdown": "## About\nI like to reverse engineer games and make educational cheats for them.\nI currently have no interesting projects :(",
+            "tags": []
+        },
+        "socialLinks": [
+            {
+                "url": "https://github.com/zanelul",
+                "icon": "github"
+            },
+            {
+                "url": "discordapp.com/users/799181660301033502",
+                "icon": "discord"
+            }
+        ],
+        "projectLinks": []
+    }
+}
