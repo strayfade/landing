@@ -4,30 +4,59 @@
         "title": "strayfade",
         "description": "strayfade's profile",
         "author": "strayfade",
-        "accentColor": "04f704",
+        "accentColor": "ffffff",
         "lang": "en"
     },
     "page": {
         "backgroundColor": "000000",
-        "textColor": "ffffff",
         "profile": {
             "pfp": "/assets/avatar/strayfade.png",
             "roundPfp": true,
             "displayName": "noah",
-            "username": "strayfade"
+            "username": "strayfade <span style='opacity: 0.5;'>(0x5346)</span>",
+            "markdown": "### Markdown!\n\nWe have markdown working.",
+            "tags": [
+                {
+                    "title": "strayfade.com",
+                    "color": "ffffff",
+                    "url": "https://strayfade.com"
+                },
+                {
+                    "title": "strayfa.de",
+                    "color": "ffffff",
+                    "url": "https://strayfa.de"
+                },
+                {
+                    "title": "sorafn.com",
+                    "color": "ffffff",
+                    "url": "https://sorafn.com"
+                }
+            ]
         },
-        "links": [
+        "socialLinks": [
             {
                 "url": "https://github.com/strayfade",
                 "icon": "github"
             },
             {
-                "url": "https://instagram.com/strayfade",
-                "icon": "instagram"
+                "url": "discordapp.com/users/455790298082181120",
+                "icon": "discord"
             },
             {
                 "url": "https://youtube.com/@strayfade",
                 "icon": "youtube"
+            }
+        ],
+        "projectLinks": [
+            {
+                "title": "sf2040 Keyboard",
+                "description": "An open-source 76-key mechanical keyboard based on the RP2040 microcontroller",
+                "url": "https://strayfa.de/sf2040"
+            },
+            {
+                "title": "Breaking WPA2",
+                "description": "Learning about WPA2 to break into my school's secure private network",
+                "url": "https://strayfa.de/WPA"
             }
         ]
     }

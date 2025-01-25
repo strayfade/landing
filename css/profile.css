@@ -4,28 +4,22 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     max-width: 500px;
+    max-height: calc(100% - 50px * 2);
+    overflow-y: scroll;
+    padding: 0px 50px;
 }
+
 .profile .pfp-container {
-    width: 100%;
+    width: min-content;
     display: flex;
+    margin: 0px auto;
 }
 
 .profile .pfp-container .pfp {
     border: 2px solid rgba(255, 255, 255, 0.05);
-    width: 20%;
-    height: 20%;
+    width: 100px;
+    height: 100px;
     margin-right: 25px;
-}
-
-.v-centered {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.profile .pfp-container div * {
-    margin: 0;
-    margin-top: -5px;
 }
 
 .display-name {
@@ -33,9 +27,15 @@
     font-size: 48px;
 }
 
+.v-centered h1,
+.v-centered h1 .display-name {
+    margin: 5px 0px 0px 0px;
+}
+
 .username {
     font-weight: 300;
     opacity: 0.75;
+    margin: -5px 0px 0px 0px;
 }
 
 .profile-separator {

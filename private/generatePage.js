@@ -1,5 +1,7 @@
 const { gradient } = require('./components/gradient')
 
+const markdown = require('markdown')
+
 const generatePage = async (profile) => {
     return `
     
@@ -24,7 +26,7 @@ const generatePage = async (profile) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     </head>
-    <body style="color: #${profile.page.textColor}; background-color: #${profile.page.backgroundColor};">
+    <body style="color: #fff; background-color: #${profile.page.backgroundColor};">
         <div>
             ${(() => {
                 let Output = ``
@@ -39,7 +41,7 @@ const generatePage = async (profile) => {
                         dist *= 2;
                         Output += `
                             <div style="filter: brightness(${dist * 100}%); opacity: 0.25;">
-                                ${gradient(profile.meta.accentColor, Math.random() * 600 + 400, x2, y2)}
+                                ${gradient(profile.meta.accentColor, Math.random() * 1600 + 400, x2, y2)}
                             </div>
                         `
                     }
@@ -55,35 +57,76 @@ const generatePage = async (profile) => {
 
                     <div class="pfp-container">
                         <img class="pfp" src="${profile.page.profile.pfp}" style="border-radius: ${profile.page.profile.roundPfp ? 500 : 0}px"/>
-                        <div style="position: relative;">
-                            <div style="height: max-content;" class="v-centered">
-                                <h1 class="display-name">${profile.page.profile.displayName}</h1>
-                                <h3 class="username">${profile.page.profile.username}</h3>
+                        <div style="max-content">
+                            <div style="height: max-content; width: max-content;" class="v-centered">
+                                <h1>
+                                    <p class="display-name">${profile.page.profile.displayName}</p>
+                                </h1>
+                                <h3 class="username">
+                                    <span>${profile.page.profile.username}</span>
+                                </h3>
                             </div>
                         </div>
                     </div>
-                    <div class="profile-separator">
-                    </div>
-                    <div>
-                        <h3>bla bla bla</h3>
-                        <p>Nobis in vel reprehenderit omnis magni reiciendis dicta iusto. Ullam sint quos quaerat repellat hic excepturi harum. Ipsam dolorum voluptate aspernatur earum alias. Aliquam perspiciatis repellendus eligendi qui natus.</p>
-                        <p>Nobis in vel reprehenderit omnis magni reiciendis dicta iusto. Ullam sint quos quaerat repellat hic excepturi harum. Ipsam dolorum voluptate aspernatur earum alias. Aliquam perspiciatis repellendus eligendi qui natus.</p>
-                    </div>
-                    <div class="profile-separator">
-                    </div>
+
+                    <div style="display: flex; width: min-content; margin: 5px auto 0px auto;">
                     ${
                         (() => {
                             let Output = ``
-                            for (const link of profile.page.links) {
+                            for (const tag of profile.page.profile.tags) {
                                 Output += `
-                                    <a class="link" href="${link.url}">
-                                        <img class="link-icon" src="https://cdn.simpleicons.org/${link.icon}/white" />
+                                <a class="tag" href="${tag.url}" style="background-color: #${tag.color}30; border-color: #${tag.color}; color: #${tag.color};">${tag.title}</a>
+                                `
+                            }
+                            return Output
+                        })()
+                    }
+                    </div>
+                    ${
+                        profile.page.profile.markdown.length > 0 ? `<div class="profile-separator"></div>` : ``
+                    }
+                    ${
+                        (() => {
+                            if (profile.page.profile.markdown.length <= 0)
+                                return ""
+                            return `<div class="bio-container">${markdown.parse(profile.page.profile.markdown)}</div>`
+                        })()
+                    }
+                    ${
+                        profile.page.projectLinks.length > 0 ? `<div class="profile-separator"></div>` : ``
+                    }
+                    ${
+                        (() => {
+                            let Output = ``
+                            for (const link of profile.page.projectLinks) {
+                                Output += `
+                                    <a class="project-link" href="${link.url}">
+                                        <h3>${link.title}</h3>
+                                        <p>${link.description}</p>
                                     </a>
                                 `
                             }
                             return Output
                         })()
                     }
+                    ${
+                        profile.page.socialLinks.length > 0 ? `<div class="profile-separator"></div>` : ``
+                    }
+                    <div class="links-container">
+                        ${
+                            (() => {
+                                let Output = ``
+                                for (const link of profile.page.socialLinks) {
+                                    Output += `
+                                        <a class="link" href="${link.url}">
+                                            <img class="link-icon" src="https://cdn.simpleicons.org/${link.icon}/white" />
+                                        </a>
+                                    `
+                                }
+                                return Output
+                            })()
+                        }
+                    </div>
                 </div>
             </div>
         </div>

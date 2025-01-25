@@ -8,7 +8,7 @@ body .container {
     padding: 20px;
 }
 .container-inner {
-    backdrop-filter: blur(10px) brightness(30%);
+    backdrop-filter: brightness(30%);
     padding: 25px;
     width: calc(100% - 25px * 2);
     height: calc(100% - 25px * 2);

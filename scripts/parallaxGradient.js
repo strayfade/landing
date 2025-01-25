@@ -28,8 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
         })(allGradients[i])
     }
 })
-document.addEventListener("mousemove", (event) => {
-    mouseX = event.x
-    mouseY = event.y
-})
-setInterval(doParallaxGradients, 10)
+
+const enableMouseMovement = true
+if (enableMouseMovement) {
+    document.addEventListener("mousemove", (event) => {
+        mouseX = event.x
+        mouseY = event.y
+    })
+    setInterval(doParallaxGradients, 10)
+}
