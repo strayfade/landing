@@ -1,0 +1,10 @@
+.cover {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    backdrop-filter: brightness(80%);
+    box-shadow: inset 0px 0px 100vh 1vh black;
+}
