@@ -22,31 +22,12 @@ const generatePage = async (profile) => {
         <link rel="stylesheet" href="/assets/build/prod.css" type="text/css">
     </head>
     <body style="color: #fff; background-color: #${profile.page.backgroundColor}; --accent-color: #${profile.meta.accentColor};--accent-color-transparent: #${profile.meta.accentColor}40;">
-        <div>
-            ${(() => {
-                let Output = ``
-                const gradCount = 2;
-                for (let x = 0; x < gradCount; x++) {
-                    for (let y = 0; y < gradCount; y++) {
-                        let x2 = 1 - (1 / (gradCount - 1)) * x
-                        let y2 = 1 - (1 / (gradCount - 1)) * y
-                        x2 += (Math.random() - 0.5) / gradCount / 2
-                        y2 += (Math.random() - 0.5) / gradCount / 2
-                        let dist = Math.sqrt(Math.pow(x2 - 0.5, 2) + Math.pow(y2 - 0.5, 2))
-                        dist *= 2;
-                        Output += `
-                            <div style="opacity: 0.25;">
-                                ${gradient(profile.meta.accentColor, Math.random() * 1000 + 200, x2, y2)}
-                            </div>
-                        `
-                    }
-                }
-                return Output;
-            })()}
+        <canvas>
+        </canvas>
+        <div class="cover">
         </div>
-        <div class="fx-cover">
-        </div>
-        <div class="container">
+        
+        ${true ? `<div class="container">
             <div class="container-inner">
                 <div class="profile">
 
@@ -125,7 +106,7 @@ const generatePage = async (profile) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>` : ""}
         <script type="text/javascript" src="/assets/build/prod.js"></script>
     </body>
 </html>
