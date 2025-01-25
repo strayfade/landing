@@ -1,11 +1,10 @@
 .link {
     height: 30px;
-    width: min-content;
-    display: inline-block;
-    margin: 0px 10px 0px 0px;
+    width: max-content;
     display: flex;
     color: white;
     padding: 0px 10px;
+    margin: 0px auto;
 }
 
 .link span {
@@ -14,8 +13,7 @@
 }
 
 .links-container {
-    width: max-content;
-    margin: 0px auto;
+    width: 100%;
     display: flex;
 }
 
