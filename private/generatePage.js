@@ -1,5 +1,3 @@
-const { gradient } = require('./components/gradient')
-
 const markdown = require('markdown')
 
 const generatePage = async (profile) => {

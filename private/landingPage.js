@@ -1,8 +1,5 @@
-const { gradient } = require('./components/gradient')
 const fs = require('fs').promises
 const path = require('path')
-
-const markdown = require('markdown')
 
 const profile = {
     meta: {

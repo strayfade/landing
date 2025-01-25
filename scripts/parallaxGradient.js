@@ -60,20 +60,26 @@ const renderGradients = () => {
     }
 
     // Render the gradients
-    gradients.forEach(({ currX, currY, radius, color, colorTransparent }) => {
-        drawRadialGradient(currX, currY, radius, color, colorTransparent);
+    gradients.forEach(({ currX, currY, radius, color, colorTransparent, maxOpacity, animationCycle }) => {
+        let opacity = Math.abs(animationCycle - 0.5) * 2
+        let outColor = `rgba(${color[0]},${color[1]},${color[2]},${opacity * maxOpacity})`
+        drawRadialGradient(currX, currY, radius, outColor, colorTransparent);
     });
 }
 
 const updateGradients = () => {
-
     const steps = 150
     for (let i = 0; i < gradients.length; i++) {
         gradients[i].currX = gradients[i].startingX + lastX * gradients[i].parallaxAmt * 400
         gradients[i].currY = gradients[i].startingY + lastY * gradients[i].parallaxAmt * 400
+        gradients[i].animationCycle += 0.001
+        if (gradients[i].animationCycle >= 1)
+            gradients[i].animationCycle = 0;
     }
     lastX += (mouseX - lastX) / steps
     lastY += (mouseY - lastY) / steps
+
+    renderGradients()
 
 }
 
@@ -93,10 +99,12 @@ const placeGradients = (columns) => {
                 startingY: (y / (columnsY - 1)) * size.height + rngY,
                 currX: (x / (columnsX - 1)) * size.width,
                 currY: (y / (columnsY - 1)) * size.height,
-                color: `rgba(${accentColor[0]},${accentColor[1]},${accentColor[2]},${Math.min(parallax / 2, 0.75)})`,
+                color: accentColor,
+                maxOpacity: Math.min(parallax / 2, 0.75),
                 colorTransparent: `rgba(${accentColor[0]},${accentColor[1]},${accentColor[2]},0)`,
                 radius: (1 - parallax) * 400 + 100,
-                parallaxAmt: parallax
+                parallaxAmt: parallax,
+                animationCycle: Math.random()
             })
         }
     }
@@ -121,5 +129,4 @@ if (enableMouseMovement) {
         mouseY *= 2
     })
     setInterval(updateGradients, 5)
-    setInterval(renderGradients, 5)
 }
