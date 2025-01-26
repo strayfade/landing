@@ -7,15 +7,15 @@ let size = {
 }
 let maxReach = 200;
 let pointRadius = 0
+const canvasRenderPercentage = 100
 const renderPoints = () => {
-    pointRadius = 5
+    pointRadius = 2
 
     if (size.width != window.innerWidth || size.height != window.innerHeight) {
         reloadPoints();
         return;
     }
 
-    const canvasRenderPercentage = 100
     canvas2.width = size.width * canvasRenderPercentage / 100;
     canvas2.height = size.height * canvasRenderPercentage / 100;
     const ctx = canvas2.getContext("2d")
@@ -25,8 +25,6 @@ const renderPoints = () => {
     ctx.fillRect(0, 0, size.width, size.height)
 
     function drawPoint(x, y, color = "white") {
-        x /= 100 / canvasRenderPercentage
-        y /= 100 / canvasRenderPercentage
         ctx.fillStyle = color;
         ctx.beginPath();
         ctx.arc(x, y, pointRadius * canvasRenderPercentage / 100, 0, Math.PI * 2);
@@ -64,12 +62,13 @@ const updatePoints = () => {
                 }
 
                 let distance = Math.sqrt(Math.pow(gradient.x - curr.x, 2) + Math.pow(gradient.y - curr.y, 2))
+                distance /= canvasRenderPercentage / 100
                 let oMaxReach = maxReach
                 if (z == -1) {
                     oMaxReach *= 1
                 }
 
-                if (distance > oMaxReach * 1.2) continue;
+                if (distance > oMaxReach * 1.25) continue;
 
                 let influence = 1 - (distance / oMaxReach);
 
@@ -107,13 +106,13 @@ const updatePoints = () => {
             const keepInBoundsFactor = 0.1
             const keepinBoundsRange = 0
 
-            if (curr.x < keepinBoundsRange)
+            if (curr.x < (keepinBoundsRange) / 100 * canvasRenderPercentage)
                 points[atIndex].velocityX += keepInBoundsFactor
-            if (curr.x > size.width - keepinBoundsRange)
+            if (curr.x > (size.width - keepinBoundsRange) / 100 * canvasRenderPercentage)
                 points[atIndex].velocityX -= keepInBoundsFactor
-            if (curr.y < keepinBoundsRange)
+            if (curr.y < (keepinBoundsRange) / 100 * canvasRenderPercentage)
                 points[atIndex].velocityY += keepInBoundsFactor
-            if (curr.y > size.height - keepinBoundsRange)
+            if (curr.y > (size.height - keepinBoundsRange) / 100 * canvasRenderPercentage)
                 points[atIndex].velocityY -= keepInBoundsFactor
 
             points[atIndex].velocityX += avgX / 40
@@ -140,8 +139,8 @@ const placePoints = (columns) => {
     for (let x = 0; x < columnsX; x++) {
         for (let y = 0; y < columnsY; y++) {
             points.push({
-                x: (x / (columnsX - 1)) * size.width,
-                y: (y / (columnsY - 1)) * size.height,
+                x: (x / (columnsX - 1)) * size.width / 100 * canvasRenderPercentage,
+                y: (y / (columnsY - 1)) * size.height / 100 * canvasRenderPercentage,
                 velocityX: 0,
                 velocityY: 0,
                 color: "white"
@@ -160,3 +159,8 @@ const reloadPoints = () => {
 document.addEventListener("DOMContentLoaded", reloadPoints)
 setInterval(updatePoints, 5)
 setInterval(renderPoints, 5)
+
+document.addEventListener("mousemove", (event) => {
+    mouseX = event.x * canvasRenderPercentage / 100
+    mouseY = event.y * canvasRenderPercentage / 100
+})
