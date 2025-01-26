@@ -22,7 +22,7 @@ const generatePage = async (profile) => {
         <link rel="stylesheet" href="/assets/build/prod.css" type="text/css">
     </head>
     <body style="color: #fff; background-color: #${profile.page.backgroundColor}; --accent-color: #${profile.meta.accentColor};--accent-color-transparent: #${profile.meta.accentColor}40;">
-        <canvas>
+        <canvas id="canvas1">
         </canvas>
         <div class="cover">
         </div>
@@ -107,6 +107,8 @@ const generatePage = async (profile) => {
                 </div>
             </div>
         </div>` : ""}
+        <canvas id="canvas2">
+        </canvas>
         <script type="text/javascript" src="/assets/build/prod.js"></script>
     </body>
 </html>

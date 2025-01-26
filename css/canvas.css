@@ -5,3 +5,8 @@ canvas {
     width: 100vw;
     height: 100vh;
 }
+#canvas2 {
+    z-index: 1;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+}
