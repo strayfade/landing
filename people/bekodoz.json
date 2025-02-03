@@ -1,0 +1,29 @@
+{
+  "path": "/bekodoz",
+  "meta": {
+    "title": "bekodoz",
+    "description": "bekodoz's profile",
+    "author": "bekodoz",
+    "accentColor": "F59B42",
+    "lang": "en"
+  },
+  "page": {
+    "backgroundColor": "000000",
+    "profile": {
+      "pfp": "/assets/avatars/bekodoz.png",
+      "roundPfp": true,
+      "displayName": "bekodoz",
+      "username": "bekodoz",
+      "markdown": "# friendship coding exercise!",
+      "tags": [
+        {
+          "title": "thelowtaperfadememeisstillmassive.online",
+          "color": "F59B42",
+          "url": "https://thelowtaperfadememeisstillmassive.online"
+        }
+      ]
+    },
+    "socialLinks": [],
+    "projectLinks": []
+  }
+}
