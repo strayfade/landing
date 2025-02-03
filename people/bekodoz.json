@@ -11,7 +11,7 @@
     "backgroundColor": "000000",
     "profile": {
       "pfp": "/assets/avatars/bekodoz.png",
-      "roundPfp": false,
+      "roundPfp": true,
       "displayName": "bekodoz",
       "username": "bekodoz",
       "markdown": "# friendship coding exercise!",
