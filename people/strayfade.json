@@ -47,6 +47,11 @@
         ],
         "projectLinks": [
             {
+                "title": "sf46 Keyboard",
+                "description": "An open-source 46-key split ergonomic keyboard based on the ESP32-C3 microcontroller",
+                "url": "https://strayfa.de/sf46"
+            },
+            {
                 "title": "sf2040 Keyboard",
                 "description": "An open-source 76-key mechanical keyboard based on the RP2040 microcontroller",
                 "url": "https://strayfa.de/sf2040"

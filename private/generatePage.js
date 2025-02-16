@@ -67,7 +67,11 @@ const generatePage = async (profile) => {
                         })()
                     }
                     ${
-                        profile.page.projectLinks.length > 0 ? `<div class="profile-separator"></div>` : ``
+                        profile.page.projectLinks.length > 0 ? `
+                        <div class="profile-separator">
+                        </div>
+                        <div class="projects-container">
+                        ` : ``
                     }
                     ${
                         (() => {
@@ -80,6 +84,7 @@ const generatePage = async (profile) => {
                                     </a>
                                 `
                             }
+                            Output += `</div>`
                             return Output
                         })()
                     }

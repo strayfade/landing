@@ -21,6 +21,12 @@
     display: block;
 }
 
+.projects-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
 .project-link {
     display: block;
     border-radius: 10px;
