@@ -52,11 +52,6 @@
                 "url": "https://strayfa.de/sf46"
             },
             {
-                "title": "sf2040 Keyboard",
-                "description": "An open-source 76-key mechanical keyboard based on the RP2040 microcontroller",
-                "url": "https://strayfa.de/sf2040"
-            },
-            {
                 "title": "Breaking WPA2",
                 "description": "Learning about WPA2 to break into my school's secure private network",
                 "url": "https://strayfa.de/WPA"

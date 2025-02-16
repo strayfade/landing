@@ -84,7 +84,8 @@ const generatePage = async (profile) => {
                                     </a>
                                 `
                             }
-                            Output += `</div>`
+                            if (profile.page.projectLinks.length > 0)
+                                Output += `</div>`
                             return Output
                         })()
                     }
